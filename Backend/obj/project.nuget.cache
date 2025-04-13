@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "7p114dr6Bdc=",
+  "dgSpecHash": "oMOFPuhMdg4=",
   "success": true,
-  "projectFilePath": "/Users/standa/Main-projects/Angular/Backend/Backend.csproj",
+  "projectFilePath": "/Users/standa/Main-projects/DashFlow/Backend/Backend.csproj",
   "expectedPackageFiles": [
     "/Users/standa/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
     "/Users/standa/.nuget/packages/microsoft.aspnetcore.openapi/9.0.1/microsoft.aspnetcore.openapi.9.0.1.nupkg.sha512",

@@ -1,10 +1,12 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
+  standalone: true,
   selector: 'app-user-table',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './user-table.component.html',
-  styleUrl: './user-table.component.scss'
+
 })
 export class UserTableComponent {
 

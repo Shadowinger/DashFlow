@@ -3,11 +3,11 @@ import { Component } from '@angular/core';
 
 @Component({
   standalone: true,
-  selector: 'app-not-found',
+  selector: 'app-main-page',
   imports: [CommonModule],
-  templateUrl: './not-found.component.html',
+  templateUrl: './main-page.component.html',
 
 })
-export class NotFoundComponent {
+export class MainPageComponent {
 
 }

@@ -15,9 +15,10 @@ import { DashboardComponent } from './app/pages/dashboard/dashboard.component';
 import { UsersComponent } from './app/pages/users/users.component';
 import { SettingsComponent } from './app/pages/settings/settings.component';
 import { NotFoundComponent } from './app/pages/not-found/not-found.component';
+import { MainPageComponent } from './app/pages/main-page/main-page.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'users', component: UsersComponent },
@@ -27,7 +28,9 @@ const routes: Routes = [
   { path: 'sidebar', component: SidebarComponent },
   { path: 'charts', component: ChartsComponent },
   { path: 'user-table', component: UserTableComponent },
-  { path: '**', component: NotFoundComponent }
+  { path: '**', component: NotFoundComponent },
+  { path: "main-page", component: MainPageComponent}
+
 ];
 
 bootstrapApplication(AppComponent, {

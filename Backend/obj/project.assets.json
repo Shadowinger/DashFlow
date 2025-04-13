@@ -2851,11 +2851,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/standa/Main-projects/Angular/Backend/Backend.csproj",
+      "projectUniqueName": "/Users/standa/Main-projects/DashFlow/Backend/Backend.csproj",
       "projectName": "Backend",
-      "projectPath": "/Users/standa/Main-projects/Angular/Backend/Backend.csproj",
+      "projectPath": "/Users/standa/Main-projects/DashFlow/Backend/Backend.csproj",
       "packagesPath": "/Users/standa/.nuget/packages/",
-      "outputPath": "/Users/standa/Main-projects/Angular/Backend/obj/",
+      "outputPath": "/Users/standa/Main-projects/DashFlow/Backend/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/standa/.nuget/NuGet/NuGet.Config"
