@@ -1,8 +1,7 @@
 @import "tailwindcss";
 
 
-
-body{
-  background: #121212;
-
+html{
+  font-family: Calibri, sans-serif;
+  overflow: hidden;
 }
