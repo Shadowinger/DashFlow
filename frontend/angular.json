@@ -48,10 +48,12 @@
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "css",
             "assets": [
+              "src/assets",
               {
                 "glob": "**/*",
                 "input": "public"
               }
+
             ],
             "styles": [
               "src/styles.css"

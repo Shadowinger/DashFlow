@@ -1,1 +1,153 @@
-<p>settings works!</p>
+<div *ngIf="showSuccessMessage" class="fixed top-4 right-4 z-50 bg-green-100 border-l-4 border-green-500 text-green-700 p-4 rounded shadow-md transition-opacity duration-500">
+  <div class="flex">
+    <div class="py-1">
+      <svg class="h-6 w-6 text-green-500 mr-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+      </svg>
+    </div>
+    <div>
+      <p class="font-bold">Settings saved successfully</p>
+    </div>
+  </div>
+</div>
+
+<div class="min-h-screen bg-gray-50 dark:bg-gray-900">
+  <!-- Header -->
+  <header class="bg-white dark:bg-[#4a4a4b] shadow">
+    <div class="max-w-7xl mx-auto py-4 sm:py-6 px-4 sm:px-6 lg:px-8">
+      <h1 class="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white">Settings</h1>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-7xl mx-auto py-4 sm:py-6 px-4 sm:px-6 lg:px-8">
+    <div class="space-y-6">
+      <!-- Account Settings Section -->
+      <div class="bg-white dark:bg-[#4a4a4b] shadow rounded-lg">
+        <div class="px-4 sm:px-6 py-4 sm:py-5 border-b border-gray-200 dark:border-gray-700">
+          <h3 class="text-lg leading-6 font-medium text-gray-900 dark:text-white">Account Settings</h3>
+          <p class="mt-1 text-sm text-gray-500 dark:text-gray-400">Manage your account information and preferences.</p>
+        </div>
+        <div class="px-4 sm:px-6 py-4 sm:py-6 space-y-4 sm:space-y-6">
+          <!-- Profile Information -->
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div>
+              <h4 class="text-sm font-medium text-gray-900 dark:text-white">Profile Information</h4>
+              <p class="text-sm text-gray-500 dark:text-gray-400">Update your account's profile information and email address.</p>
+            </div>
+            <button (click)="editProfile()" class="w-full sm:w-auto inline-flex justify-center items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 dark:bg-blue-500 dark:hover:bg-blue-600">
+              Edit Profile
+            </button>
+          </div>
+
+          <!-- Password -->
+          <div class="pt-4 sm:pt-6 border-t border-gray-200 dark:border-gray-700">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+              <div>
+                <h4 class="text-sm font-medium text-gray-900 dark:text-white">Password</h4>
+                <p class="text-sm text-gray-500 dark:text-gray-400">Ensure your account is using a secure password.</p>
+              </div>
+              <button (click)="changePassword()" class="w-full sm:w-auto inline-flex justify-center items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 dark:bg-blue-500 dark:hover:bg-blue-600">
+                Change Password
+              </button>
+            </div>
+          </div>
+
+          <!-- Two Factor Authentication -->
+          <div class="pt-4 sm:pt-6 border-t border-gray-200 dark:border-gray-700">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+              <div>
+                <h4 class="text-sm font-medium text-gray-900 dark:text-white">Two Factor Authentication</h4>
+                <p class="text-sm text-gray-500 dark:text-gray-400">Add additional security to your account using two factor authentication.</p>
+              </div>
+              <button (click)="setupTwoFactor()" class="w-full sm:w-auto inline-flex justify-center items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-gray-200 dark:border-gray-600 dark:hover:bg-gray-600">
+                Setup 2FA
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Appearance Settings -->
+      <div class="bg-white dark:bg-[#4a4a4b] shadow rounded-lg">
+        <div class="px-4 sm:px-6 py-4 sm:py-5 border-b border-gray-200 dark:border-gray-700">
+          <h3 class="text-lg leading-6 font-medium text-gray-900 dark:text-white">Appearance</h3>
+          <p class="mt-1 text-sm text-gray-500 dark:text-gray-400">Customize the application appearance.</p>
+        </div>
+        <div class="px-4 sm:px-6 py-4 sm:py-6">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div>
+              <h4 class="text-sm font-medium text-gray-900 dark:text-white">Theme</h4>
+              <p class="text-sm text-gray-500 dark:text-gray-400">Choose between light and dark mode.</p>
+            </div>
+            <div class="flex flex-wrap sm:flex-nowrap gap-2">
+              <button (click)="setTheme('light')" class="flex-1 sm:flex-none w-full sm:w-auto inline-flex justify-center items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium"
+                [ngClass]="{
+                  'bg-blue-600 text-white': currentTheme === 'light',
+                  'bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-200': currentTheme !== 'light'
+                }">
+                Light
+              </button>
+              <button (click)="setTheme('dark')" class="flex-1 sm:flex-none w-full sm:w-auto inline-flex justify-center items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium"
+                [ngClass]="{
+                  'bg-blue-600 text-white': currentTheme === 'dark',
+                  'bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-200': currentTheme !== 'dark'
+                }">
+                Dark
+              </button>
+              <button (click)="setTheme('system')" class="flex-1 sm:flex-none w-full sm:w-auto inline-flex justify-center items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium"
+                [ngClass]="{
+                  'bg-blue-600 text-white': currentTheme === 'system',
+                  'bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-200': currentTheme !== 'system'
+                }">
+                System
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Notification Settings -->
+      <div class="bg-white dark:bg-[#4a4a4b] shadow rounded-lg">
+        <div class="px-4 sm:px-6 py-4 sm:py-5 border-b border-gray-200 dark:border-gray-700">
+          <h3 class="text-lg leading-6 font-medium text-gray-900 dark:text-white">Notification Settings</h3>
+          <p class="mt-1 text-sm text-gray-500 dark:text-gray-400">Configure how you receive notifications.</p>
+        </div>
+        <div class="px-4 sm:px-6 py-4 sm:py-6 space-y-4 sm:space-y-6">
+          <!-- Email Notifications -->
+          <div class="flex items-start">
+            <div class="flex items-center h-5">
+              <input id="email-notifications" name="email-notifications" type="checkbox" [checked]="notificationSettings.email" (change)="toggleEmailNotifications($event)" class="focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300 rounded dark:bg-gray-700 dark:border-gray-600">
+            </div>
+            <div class="ml-3 text-sm">
+              <label for="email-notifications" class="font-medium text-gray-700 dark:text-gray-200">Email Notifications</label>
+              <p class="text-gray-500 dark:text-gray-400">Receive email notifications when important events occur.</p>
+            </div>
+          </div>
+
+          <!-- Push Notifications -->
+          <div class="flex items-start">
+            <div class="flex items-center h-5">
+              <input id="push-notifications" name="push-notifications" type="checkbox" [checked]="notificationSettings.push" (change)="togglePushNotifications($event)" class="focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300 rounded dark:bg-gray-700 dark:border-gray-600">
+            </div>
+            <div class="ml-3 text-sm">
+              <label for="push-notifications" class="font-medium text-gray-700 dark:text-gray-200">Push Notifications</label>
+              <p class="text-gray-500 dark:text-gray-400">Receive push notifications on your device.</p>
+            </div>
+          </div>
+
+          <!-- Save Button -->
+          <div class="pt-4 sm:pt-6 flex justify-end">
+            <button type="button" (click)="saveNotificationSettings()" [disabled]="isSaving" class="w-full sm:w-auto inline-flex justify-center items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 dark:bg-blue-500 dark:hover:bg-blue-600">
+              <svg *ngIf="isSaving" class="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+              </svg>
+              {{ isSaving ? 'Saving...' : 'Save Changes' }}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>

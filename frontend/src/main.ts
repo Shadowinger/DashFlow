@@ -16,6 +16,7 @@ import { UsersComponent } from './app/pages/users/users.component';
 import { SettingsComponent } from './app/pages/settings/settings.component';
 import { NotFoundComponent } from './app/pages/not-found/not-found.component';
 import { MainPageComponent } from './app/pages/main-page/main-page.component';
+import { RegisterComponent } from './app/pages/register/register.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -24,13 +25,9 @@ const routes: Routes = [
   { path: 'users', component: UsersComponent },
   { path: 'settings', component: SettingsComponent },
   { path: 'forms', component: FormsComponent },
-  { path: 'navbar', component: NavbarComponent },
-  { path: 'sidebar', component: SidebarComponent },
-  { path: 'charts', component: ChartsComponent },
-  { path: 'user-table', component: UserTableComponent },
-  { path: '**', component: NotFoundComponent },
-  { path: "main-page", component: MainPageComponent}
-
+  { path: 'register', component: RegisterComponent },
+  { path: 'main-page', component: MainPageComponent },
+  { path: '**', component: NotFoundComponent }
 ];
 
 bootstrapApplication(AppComponent, {

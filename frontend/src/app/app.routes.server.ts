@@ -26,4 +26,12 @@ export const serverRoutes: ServerRoute[] = [
     path: 'main-page',
     renderMode: RenderMode.Prerender
   },
+  {
+    path: 'not-found',
+    renderMode: RenderMode.Prerender
+  },
+  {
+    path: 'register',
+    renderMode: RenderMode.Prerender
+  }
 ];
